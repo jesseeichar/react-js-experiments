@@ -44,7 +44,7 @@ class App extends Component {
             <ProjectList activeProject={this.state.activeProject} projects={this.state.catalog.allProjects()} onChange={e => this.setActiveProject(e)} />
           </Drawer>
 
-          <Project project={this.currentProject()} />
+          <Project openDock={this.state.open} project={this.currentProject()} />
         </div>
       </MuiThemeProvider>
     );

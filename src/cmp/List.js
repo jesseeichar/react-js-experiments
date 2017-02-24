@@ -14,9 +14,8 @@ class List extends Component {
   }
   styles = {
     root: {
-      display: 'flex',
-      flexWrap: 'wrap',
-      justifyContent: 'space-around',
+      position: "absolute",
+      top: "10em",
     },
     gridList: {
       top: 0,
@@ -54,8 +53,8 @@ class List extends Component {
     );
   }
   render() {
-    return <div >
-      <div>
+    return (
+      <div style={this.styles.root} >
         <GridList
           cols={1}
           cellHeight={200}
@@ -79,7 +78,7 @@ class List extends Component {
           ))}
         </GridList>
       </div>
-    </div>
+    )
   }
 }
 

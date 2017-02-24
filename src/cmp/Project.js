@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import List from './List'
 import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColumn} from 'material-ui/Table';
+import './Project.css';
 
 class Project extends Component {
   styles = {
@@ -9,7 +10,7 @@ class Project extends Component {
     }
   }
   render() {
-    return <div>
+    return <div className={this.props.openDock ? "openDock": "closeDock"}>
       <Table style={{width:this.props.project.lists.length*this.styles.column.width}}>
         <TableHeader
             displaySelectAll={false}
