@@ -7,6 +7,11 @@ class Project extends Component {
   styles = {
     column: {
       width: 300
+    },
+    headerColumn: {
+      width: 300,
+      fontSize: "16px",
+      fontWeight: "bolder"
     }
   }
   render() {
@@ -15,16 +20,15 @@ class Project extends Component {
         <TableHeader
             displaySelectAll={false}
             adjustForCheckbox={false}>
-          <TableRow>
+          <TableRow style={this.styles.row}>
             {
               this.props.project.lists.map((list) => {
-                return <TableHeaderColumn style={this.styles.column} key={"header"+list.id}>{list.name}</TableHeaderColumn>
+                return <TableHeaderColumn style={this.styles.headerColumn} key={"header"+list.id}>{list.name ? list.name : "Unnamed List"}</TableHeaderColumn>
               })
             }
           </TableRow>
         </TableHeader>
-        <TableBody
-            displayRowCheckbox={false}>
+        <TableBody displayRowCheckbox={false}>
           <TableRow>
           {
             this.props.project.lists.map((list) => {
